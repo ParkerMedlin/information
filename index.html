@@ -3,16 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+    <title>Information</title>
     <style>
-        body, html {
-          height: 100%;
-          position: relative;
-          overflow: hidden;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
         }
-        h1 {
-          position: absolute;
-          transition: transform .5s;
+        #linkDiv {
+            display: flex;
+            justify-content: center;
+            font-size: 26px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 998;
+            width: 100vw;
+        }
+        #infoIcon {
+            position: absolute;
+            z-index: 1;
+            width: 100px;
+            height: 100px;
         }
         #mkgLogo {
           position: absolute;
@@ -22,81 +39,201 @@
           animation: colorChange 4s infinite;
           z-index: 999;
         }
-        #linkDiv {
-          display: flex;
-          justify-content: center;
-          font-size: 26px;
-        }
         @keyframes colorChange {
-            0% { fill: #ff4053; }
-            12% { fill: #ff9d00; }
-            25% { fill: #fff700; }
-            37% { fill: #22ff00; }
-            49% { fill: #00ddff; }
-            61% { fill: #0004ff; }
-            73% { fill: #7b00ff; }
-            92% { fill: #ff00d0; }
-            100% { fill: #ff4053; } /* Loop back to the first color */
+            0%  { fill: #0004ff; }
+            12% { fill: #7b00ff; }
+            25% { fill: #ff00d0; }
+            37% { fill: #ff4053; }
+            49% { fill: #ff9d00; }
+            61%  { fill:#fff700;  }
+            73% { fill: #22ff00; }
+            92% { fill: #00ddff; }
+            100% { fill: #0004ff; }
+        }
+        h1 {
+            position: absolute;
+            width: 100px;
+            text-align: center;
+            font-size: 16px;
+            transform-origin: center center; 
+        }
+        .orbit1 {
+            animation: orbit 5s linear infinite; /* Animation applied here */
+        }
+        @keyframes orbit {
+            from { transform: rotate(0deg) translate(0px) rotate(0deg); }
+            to { transform: rotate(360deg) translate(350px) rotate(-540deg); }
+        }
+        .orbit2 {
+            animation: orbit2 5s linear infinite; /* Animation applied here */
+        }
+        @keyframes orbit2 {
+            from { transform: rotate(0deg) translate(0px) rotate(0deg); }
+            to { transform: rotate(-360deg) translate(400px) rotate(720deg); }
+        }
+        .orbit3 {
+            animation: orbit3 10s linear infinite; /* Animation applied here */
+        }
+        @keyframes orbit3 {
+            from { transform: rotate(180deg) translate(0px) rotate(0deg); }
+            to { transform: rotate(-360deg) translate(500px) rotate(50deg); }
+        }
+        .orbit4 {
+            animation: orbit4 15s linear infinite; /* Animation applied here */
+        }
+        @keyframes orbit4 {
+            from { transform: rotate(10deg) translate(0px) rotate(-90deg); }
+            to { transform: rotate(-360deg) translate(1000px) rotate(1000deg); }
+        }
+        .orbit5 {
+            animation: orbit5 15s linear infinite; /* Animation applied here */
+        }
+        @keyframes orbit5 {
+            from { transform: rotate(180deg) translate(0px) rotate(-90deg); }
+            to { transform: rotate(-360deg) translate(1500px) rotate(1000deg); }
+        }
+        .orbit6 {
+            animation: orbit6 10s linear infinite; /* Animation applied here */
+        }
+        @keyframes orbit6 {
+            from { transform: rotate(120deg) translate(0px) rotate(-90deg); }
+            to { transform: rotate(-270deg) translate(1500px) rotate(2000deg); }
+        }
+
+        .orbit7 {
+            animation: orbit7 15s linear infinite; /* Animation applied here */
+        }
+        @keyframes orbit7 {
+            from { transform: rotate(-20deg) translate(0px) rotate(-90deg); }
+            to { transform: rotate(-270deg) translate(2200px) rotate(2000deg); }
         }
     </style>
 </head>
 <body>
+    <!-- <svg id="infoIcon" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 416.979 416.979" xml:space="preserve">
+        <path d="M356.004 61.156c-81.37-81.47-213.377-81.551-294.848-.182-81.47 81.371-81.552 213.379-.181 294.85 81.369 81.47 213.378 81.551 294.849.181 81.469-81.369 81.551-213.379.18-294.849zM237.6 
+                340.786a5.821 5.821 0 0 1-5.822 5.822h-46.576a5.821 5.821 0 0 1-5.822-5.822V167.885a5.821 5.821 0 0 1 5.822-5.822h46.576a5.82 5.82 0 0 1 5.822 5.822v172.901zm-29.11-202.885c-18.618 
+                0-33.766-15.146-33.766-33.765 0-18.617 15.147-33.766 33.766-33.766s33.766 15.148 33.766 33.766c0 18.619-15.149 33.765-33.766 33.765z" fill="#0004ff"></path>
+    </svg> -->
     <div id="linkDiv"><a href="/information/more.html">Learn More</a></div>
-    <h1>More Information</h1>
-    <h1>More Information</h1>
-    <h1>More Information</h1>
-    <h1>More Information</h1>
-    <h1>More Information</h1>
-    <h1>More Information</h1>
-    <h1>More Information</h1>
-    <h1>More Information</h1>
-    <h1>More Information</h1>
+    
+    <img id="infoIcon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAKVQTFRFAAAA0NDQurq6paWlm5ubkpKSjIyMsbGxwsLC1tbWysrKgoKCYmJiPT09Dw8PAAAAGBgYQUFBgICAwsLCsbGxV1dXKSkptLS0aWlpNTU1n5+fbGxsTU1NJCQkRERELi4uUlJSurq6HR0ddnZ2wcHBSUlJERERfX19tLS0JiYm7u7u////3t7e9fX1+vr629vb9/f34+Pj6urqwcHBysrK0NDQ1tbWh++svgAAADd0Uk5TAC3/////////B1P//////////4bz///g////////////uf//jf///////////////////////9+Z1sAAAAsKSURBVHic7Z1Ze9u2EoYJURup1aJs2WraVLETJ6ft//8XvenTJ3XrbMfN6siLLMmSteCIpDauAIkZgvbxd9HGFkXwNbEMZgYAUZISWWjxn8W/5grNEnKbVLnYBejjosXmWziZ5K8LQ9wHwCPUdNKrkTHHlQU61IYU653iEOqVbpNEezf6zbg2xHidCITNXmOQifXNeeliNgN+GnDC9qLN9QS+T6qzr1Owp7HuCHkztaFfit+QFvUzwDcJR9jp34HdS1F2brpAd4IizGnQ9d04m4DcB+S5OpnvELdxi+6SU/G7iBNqOxPI6unUrCj8txMl1Cb7N6LPEKp87pPYDcQItdnTb2Lls0WrX4UapBBh3kC2KW1RVRN4jwKE6lOoDp0tg76L+9XYhMZdPMssrvLfabwvxiTU2ijjQ5ha7+N12fEIs1qyL9DW3ts4xlwcws65GuNbEGp+jt61xSDMta+ifwlImZvIE4/IhKQk6wVaovp1RGdAVMJmSd4LtFWYR+vkIhIeJt6F+qj8McrVkQj1H9BtNC7pXyKMjVEIm9OYgy64jB5/XYpAmNNjPAuSyIDbGucnTEUTXKtFTjiv5CXUVKmDhI9mfb7rOAm13ev4z4Kkyr9cl/ER6vvJTZT4RcY8gz8XoWF8FXwYHJFrjs6dh/DoG3qEKqb0O3bd4nj2zly2oRaseYvpb2QTdkaJOGNiKmOwEJmE6QZcvMU8o6KyCPVaugEVpf7f8O6GQZjOYcKp1lnooBFOSDrpB1zMikMDluGEB2mvorYy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">
     <a href="file:///C:/Users/pmedlin/Desktop/mk-gartner/index.html">
-      <svg id="mkgLogo" width="199.811" height="93.874" viewBox="0 0 52.867 24.837" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-        <g style="stroke-width:1.18738">
-          <path id="mkgPath" d="m37.118 16.66-2.966 13.702 11.6-.005-5.212-6.726 7.3-6.97zM4.541 31.812c-.473.728-.797 
-            1.525-.996 2.457-.155.707-.17 2.416-.025 3.114.19.936.648 2.048 1.111 2.685l.164.23h5.481v-5.531H6.638l.01 1.106.016 
-            1.111.712.015.708.015v.543H6.335l-.07-.164c-.2-.474-.249-.802-.244-1.58.005-.717.015-.802.15-1.196l.144-.423 1.983-.015 
-            1.978-.01v-2.74h-5.48Zm12.113-.334c-2.093.25-3.727 1.67-4.734 4.116-.503 1.236-.807 2.676-.911 4.365l-.025.339h2.63v-.294c0-.165.035-.563.075-.887.264-1.983  
-            1.002-3.403 2.207-4.245l.16-.11v2.147H14.56v2.013h1.495v1.376h2.441v-8.869l-.757.005c-.419.005-.907.025-1.086.045zm2.491 4.38v4.44h2.491v-2.193h.738l.732.005 
-            1.22 1.615c.668.886 1.236 1.604 1.256 
-            1.589.02-.01.429-.468.912-1.016.608-.693.867-1.017.837-1.062-.02-.04-.373-.508-.782-1.046l-.737-.977.184-.214c.23-.269.488-.812.598-1.26.124-.499.114-1.515-.02-2.028-.274-1.047-.952-1.78-1.968-2.118l-.404-.14-2.526-.014-2.531-.015zm4.53-1.719c.223.12.323.314.323.638.005.234-.02.304-.12.413-.239.255-.323.274-1.32.274h-.922V34.07h.947s.981.015 
-            1.091.07zm3.592-1.34v1.37h1.395l.01 3.05.015 3.054 1.235.015 1.23.01v-6.129h1.396v-2.74h-5.281zm6.063-1.335c-.02.014-.035 2.012-.035 4.434v4.4h2.441v-5.536l.155.09c.09.05.349.269.578.483 
-            1.066 1.006 1.814 2.725 1.894 4.375l.03.588h2.426v-8.869h-2.441v2.74c-.188-.703-1.49-2.45-3.134-2.666-.539-.074-1.854-.1-1.914-.04zm8.186-.035v8.868h5.78v-2.74h-3.288v-.597h2.291v-2.193h-2.291v-.598h3.288v-2.74h-2.89zm6.428 
-            4.429v4.44h2.491v-2.193h.738l.732.005 1.146 1.52c.633.832 1.18 1.564 1.226 
-            1.624.08.1.104.075.986-.932l.907-1.03-.12-.155c-.064-.09-.413-.558-.777-1.042l-.657-.882.199-.249c.254-.324.433-.707.558-1.19.13-.499.14-1.42.02-1.954-.244-1.076-.962-1.883-1.988-2.227l-.404-.14-2.526-.014-2.531-.015zm4.564-1.694c.314.194.398.723.164 
-            1.021-.199.255-.314.28-1.315.28h-.922v-1.396h.962c.852 0 .971.01 1.11.095zm-42.476-3.777 21.356.005 3.301-13.731-9.75 8.071 1.554-8.071z" transform="matrix(.84244 0 0 .84194 1.327 -11.951)"/>
-        </g>
-      </svg>
-    </a>
+        <svg id="mkgLogo" width="199.811" height="93.874" viewBox="0 0 52.867 24.837" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+          <g style="stroke-width:1.18738">
+            <path id="mkgPath" d="m37.118 16.66-2.966 13.702 11.6-.005-5.212-6.726 7.3-6.97zM4.541 31.812c-.473.728-.797 
+              1.525-.996 2.457-.155.707-.17 2.416-.025 3.114.19.936.648 2.048 1.111 2.685l.164.23h5.481v-5.531H6.638l.01 1.106.016 
+              1.111.712.015.708.015v.543H6.335l-.07-.164c-.2-.474-.249-.802-.244-1.58.005-.717.015-.802.15-1.196l.144-.423 1.983-.015 
+              1.978-.01v-2.74h-5.48Zm12.113-.334c-2.093.25-3.727 1.67-4.734 4.116-.503 1.236-.807 2.676-.911 4.365l-.025.339h2.63v-.294c0-.165.035-.563.075-.887.264-1.983  
+              1.002-3.403 2.207-4.245l.16-.11v2.147H14.56v2.013h1.495v1.376h2.441v-8.869l-.757.005c-.419.005-.907.025-1.086.045zm2.491 4.38v4.44h2.491v-2.193h.738l.732.005 
+              1.22 1.615c.668.886 1.236 1.604 1.256 
+              1.589.02-.01.429-.468.912-1.016.608-.693.867-1.017.837-1.062-.02-.04-.373-.508-.782-1.046l-.737-.977.184-.214c.23-.269.488-.812.598-1.26.124-.499.114-1.515-.02-2.028-.274-1.047-.952-1.78-1.968-2.118l-.404-.14-2.526-.014-2.531-.015zm4.53-1.719c.223.12.323.314.323.638.005.234-.02.304-.12.413-.239.255-.323.274-1.32.274h-.922V34.07h.947s.981.015 
+              1.091.07zm3.592-1.34v1.37h1.395l.01 3.05.015 3.054 1.235.015 1.23.01v-6.129h1.396v-2.74h-5.281zm6.063-1.335c-.02.014-.035 2.012-.035 4.434v4.4h2.441v-5.536l.155.09c.09.05.349.269.578.483 
+              1.066 1.006 1.814 2.725 1.894 4.375l.03.588h2.426v-8.869h-2.441v2.74c-.188-.703-1.49-2.45-3.134-2.666-.539-.074-1.854-.1-1.914-.04zm8.186-.035v8.868h5.78v-2.74h-3.288v-.597h2.291v-2.193h-2.291v-.598h3.288v-2.74h-2.89zm6.428 
+              4.429v4.44h2.491v-2.193h.738l.732.005 1.146 1.52c.633.832 1.18 1.564 1.226 
+              1.624.08.1.104.075.986-.932l.907-1.03-.12-.155c-.064-.09-.413-.558-.777-1.042l-.657-.882.199-.249c.254-.324.433-.707.558-1.19.13-.499.14-1.42.02-1.954-.244-1.076-.962-1.883-1.988-2.227l-.404-.14-2.526-.014-2.531-.015zm4.564-1.694c.314.194.398.723.164 
+              1.021-.199.255-.314.28-1.315.28h-.922v-1.396h.962c.852 0 .971.01 1.11.095zm-42.476-3.777 21.356.005 3.301-13.731-9.75 8.071 1.554-8.071z" transform="matrix(.84244 0 0 .84194 1.327 -11.951)"/>
+          </g>
+        </svg>
+      </a>
+
     <script>
-        function moveH1() {
-          let h1s = document.querySelectorAll('h1');
-          h1s.forEach(h1 => {
-              const x = Math.random() * window.innerWidth-100;
-              const y = Math.random() * window.innerHeight-50;
-              h1.style.transform = `translate(${x}px, ${y}px)`;
-          });
-        }
-        function addH1() {
-          const newH1 = document.createElement('h1');
-          newH1.textContent = 'More Information';
-          const x = Math.random() * window.innerWidth/4;
-          const y = Math.random() * window.innerHeight/2;
-          newH1.style.position = 'absolute';
-          newH1.style.transform = `translate(${x}px, ${y}px)`;
-          document.body.appendChild(newH1);
-        }
-        function makeH1Bigger(){
-            let h1s = document.querySelectorAll('h1');
-            h1s.forEach(h1 => {
-                let currentSize = parseFloat(window.getComputedStyle(h1).fontSize);
-                h1.style.fontSize = `${currentSize + 5}px`;
+        document.addEventListener("DOMContentLoaded", function() {
+            // orbit1
+            for (let i = 0; i < 60; i++) {
+                const newElement = document.createElement('h1');
+                newElement.textContent = 'More Information';
+                newElement.className = 'orbit1';
+                document.body.appendChild(newElement);
+            }
+            const orbit1Elements = document.querySelectorAll('.orbit1');
+            orbit1Elements.forEach((element, index) => {
+                const delay = (index * 0.1).toFixed(1);
+                element.style.animationDelay = `${delay}s`;
             });
-        }
-        setInterval(moveH1, 500);
-        setInterval(addH1, 1000);
-        setInterval(makeH1Bigger, 500);
+
+            // orbit2
+            for (let i = 0; i < 60; i++) {
+                const newElement = document.createElement('h1');
+                newElement.textContent = 'More Information';
+                newElement.className = 'orbit2';
+                document.body.appendChild(newElement);
+            }
+            const orbit2Elements = document.querySelectorAll('.orbit2');
+            orbit2Elements.forEach((element, index) => {
+                const delay = (index * 0.1).toFixed(1);
+                element.style.animationDelay = `${delay}s`;
+            });
+
+            // orbit3
+            for (let i = 0; i < 60; i++) {
+                const newElement = document.createElement('h1');
+                newElement.textContent = 'More Information';
+                newElement.className = 'orbit3';
+                document.body.appendChild(newElement);
+            }
+            const orbit3Elements = document.querySelectorAll('.orbit3');
+            orbit3Elements.forEach((element, index) => {
+                const delay = (index * 0.2).toFixed(1);
+                element.style.animationDelay = `${delay}s`;
+            });
+
+            // orbit4
+            for (let i = 0; i < 80; i++) {
+                const newElement = document.createElement('h1');
+                newElement.textContent = 'More Information';
+                newElement.className = 'orbit4';
+                document.body.appendChild(newElement);
+            }
+            const orbit4Elements = document.querySelectorAll('.orbit4');
+            orbit4Elements.forEach((element, index) => {
+                const delay = (index * 0.2).toFixed(1);
+                element.style.animationDelay = `${delay}s`;
+            });
+
+            // orbit5
+            for (let i = 0; i < 80; i++) {
+                const newElement = document.createElement('h1');
+                newElement.textContent = 'More Information';
+                newElement.className = 'orbit5';
+                document.body.appendChild(newElement);
+            }
+            const orbit5Elements = document.querySelectorAll('.orbit5');
+            orbit5Elements.forEach((element, index) => {
+                const delay = (index * 0.2).toFixed(1);
+                element.style.animationDelay = `${delay}s`;
+            });
+
+            // orbit6
+            for (let i = 0; i < 60; i++) {
+                const newElement = document.createElement('h1');
+                newElement.textContent = 'More Information';
+                newElement.className = 'orbit6';
+                document.body.appendChild(newElement);
+            }
+            const orbit6Elements = document.querySelectorAll('.orbit6');
+            orbit6Elements.forEach((element, index) => {
+                const delay = (index * 0.2).toFixed(1);
+                element.style.animationDelay = `${delay}s`;
+            });
+
+            // orbit7
+            for (let i = 0; i < 80; i++) {
+                const newElement = document.createElement('h1');
+                newElement.textContent = 'More Information';
+                newElement.className = 'orbit7';
+                document.body.appendChild(newElement);
+            }
+            const orbit7Elements = document.querySelectorAll('.orbit7');
+            orbit7Elements.forEach((element, index) => {
+                const delay = (index * 0.2).toFixed(1);
+                element.style.animationDelay = `${delay}s`;
+            });
+
+            
+    });
+
+
     </script>
 </body>
 </html>
